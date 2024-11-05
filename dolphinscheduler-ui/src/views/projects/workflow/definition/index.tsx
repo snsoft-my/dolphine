@@ -307,7 +307,7 @@ export default defineComponent({
           v-model:show={this.copyShowRef}
           onUpdateList={this.handleCopyUpdateList}
         />
-        <NModal
+        {/* <NModal
           v-model:show={this.setTimingDialogShowRef}
           preset={'dialog'}
           title={t('project.workflow.success')}
@@ -316,7 +316,7 @@ export default defineComponent({
           negativeText={t('project.workflow.cancel')}
           maskClosable={false}
           onPositiveClick={this.confirmToSetWorkflowTiming}
-        />
+        /> */}
       </NSpace>
     )
   }
