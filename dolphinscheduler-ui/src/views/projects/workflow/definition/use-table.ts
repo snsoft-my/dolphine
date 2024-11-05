@@ -108,7 +108,7 @@ export function useTable() {
                         name: 'workflow-definition-detail',
                         params: { code: row.code }
                       })
-                      window.open(routeUrl.href, '_blank')
+                      window.open(routeUrl.href, '_self')
                     }
                   },
                   {
@@ -182,19 +182,19 @@ export function useTable() {
         render: (row) =>
           row.releaseState === 'ONLINE'
             ? h(
-                NTag,
-                { type: 'success', size: 'small' },
-                {
-                  default: () => t('project.workflow.up_line')
-                }
-              )
+              NTag,
+              { type: 'success', size: 'small' },
+              {
+                default: () => t('project.workflow.up_line')
+              }
+            )
             : h(
-                NTag,
-                { type: 'warning', size: 'small' },
-                {
-                  default: () => t('project.workflow.down_line')
-                }
-              )
+              NTag,
+              { type: 'warning', size: 'small' },
+              {
+                default: () => t('project.workflow.down_line')
+              }
+            )
       },
       {
         title: t('project.workflow.schedule_publish_status'),
@@ -250,7 +250,7 @@ export function useTable() {
       {
         title: t('project.workflow.operation'),
         key: 'operation',
-        ...COLUMN_WIDTH_CONFIG['operation'](10),
+        ...COLUMN_WIDTH_CONFIG['operation'](9),
         render: (row) =>
           h(TableAction, {
             row,
@@ -262,8 +262,8 @@ export function useTable() {
             onReleaseWorkflow: () => releaseWorkflow(row),
             onCopyWorkflow: () => copyWorkflow(row),
             onExportWorkflow: () => exportWorkflow(row),
-            onGotoTimingManage: () => gotoTimingManage(row),
-            onGotoWorkflowTree: () => gotoWorkflowTree(row)
+            onGotoTimingManage: () => gotoTimingManage(row)
+            // onGotoWorkflowTree: () => gotoWorkflowTree(row)
           })
       }
     ] as TableColumns<any>
@@ -343,7 +343,7 @@ export function useTable() {
     })
   }
 
-  const batchCopyWorkflow = () => {}
+  const batchCopyWorkflow = () => { }
 
   const releaseWorkflow = (row: any) => {
     const data = {

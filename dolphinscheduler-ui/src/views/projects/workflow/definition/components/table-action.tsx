@@ -283,7 +283,7 @@ export default defineComponent({
             )
           }}
         </NTooltip>
-        <NTooltip trigger={'hover'}>
+        {/* <NTooltip trigger={'hover'}>
           {{
             default: () => t('project.workflow.tree_view'),
             trigger: () => (
@@ -300,7 +300,7 @@ export default defineComponent({
               </NButton>
             )
           }}
-        </NTooltip>
+        </NTooltip> */}
         <NTooltip trigger={'hover'}>
           {{
             default: () => t('project.workflow.export'),
