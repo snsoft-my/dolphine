@@ -53,9 +53,9 @@ export const useForm = () => {
       startEndTime: [new Date(year, month, day), new Date(year, month, day)],
       scheduleTime: '',
       dataDateType: 1,
-      failureStrategy: 'CONTINUE',
-      warningType: 'NONE',
-      warningGroupId: null,
+      failureStrategy: 'END',
+      warningType: 'FAILURE',
+      warningGroupId: 1,
       execType: 'START_PROCESS',
       startNodeList: '',
       taskDependType: 'TASK_POST',
@@ -64,7 +64,7 @@ export const useForm = () => {
       processInstancePriority: 'MEDIUM',
       workerGroup: 'default',
       tenantCode: 'default',
-      environmentCode: null,
+      environmentCode: 'default',
       startParams: null,
       expectedParallelismNumber: '',
       dryRun: 0,
@@ -104,13 +104,13 @@ export const useForm = () => {
       ],
       crontab: '0 0 * * * ? *',
       timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      failureStrategy: 'CONTINUE',
+      failureStrategy: 'END',
       warningType: 'NONE',
       processInstancePriority: 'MEDIUM',
-      warningGroupId: null as null | number,
+      warningGroupId: 1,
       workerGroup: 'default',
       tenantCode: 'default',
-      environmentCode: null as null | string
+      environmentCode: 'default'
     },
     saving: false
   })

@@ -38,11 +38,11 @@ export const useStart = (
     startFormRef: ref(),
     startForm: {
       version: 1,
-      warningType: 'NONE',
-      warningGroupId: null,
+      warningType: 'FAILURE',
+      warningGroupId: 1,
       workerGroup: 'default',
       tenantCode: 'default',
-      environmentCode: null,
+      environmentCode: 'default',
       startParams: null as null | string,
       dryRun: 0
     },
