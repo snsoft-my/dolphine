@@ -54,7 +54,7 @@ export function useSql(model: { [field: string]: any }): IJsonItem[] {
       type: 'multi-input',
       field: 'preStatements',
       name: t('project.node.pre_sql_statement'),
-      span: 22,
+      span: 30,
       props: {
         placeholder: t('project.node.sql_input_placeholder'),
         type: 'textarea',
@@ -65,7 +65,7 @@ export function useSql(model: { [field: string]: any }): IJsonItem[] {
       type: 'multi-input',
       field: 'postStatements',
       name: t('project.node.post_sql_statement'),
-      span: 22,
+      span: 30,
       props: {
         placeholder: t('project.node.sql_input_placeholder'),
         type: 'textarea',
