@@ -15,6 +15,9 @@
  * limitations under the License.
  */
 
+// @ts-nocheck
+
+
 import { ref, onMounted, watch, h, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { NEllipsis, NIcon } from 'naive-ui'

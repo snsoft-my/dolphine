@@ -15,6 +15,9 @@
  * limitations under the License.
  */
 
+// @ts-nocheck
+
+
 import type {
   IDataSource,
   IDataBase

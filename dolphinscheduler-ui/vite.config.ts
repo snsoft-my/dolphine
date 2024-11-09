@@ -42,6 +42,8 @@ export default defineConfig({
     }
   },
   server: {
+    port: 5173,
+    host: true,
     proxy: {
       '/dolphinscheduler': {
         target: loadEnv('development', './').VITE_APP_DEV_WEB_URL,

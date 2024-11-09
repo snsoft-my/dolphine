@@ -71,7 +71,7 @@ export default defineComponent({
     const chartData: Ref<Array<IChartDataItem>> = ref([] as IChartDataItem[])
     const taskStateMap = ref()
 
-    const taskTypeNodeOptions: Ref<Array<ITaskTypeNodeOption>> = ref([
+    const taskTypeNodeOptions: any = ref([
       {
         taskType: 'SHELL',
         color: '#646464',

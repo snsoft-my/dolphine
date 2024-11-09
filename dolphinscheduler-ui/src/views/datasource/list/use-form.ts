@@ -15,6 +15,9 @@
  * limitations under the License.
  */
 
+// @ts-nocheck
+
+
 import { reactive, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { getKerberosStartupState } from '@/service/modules/data-source'

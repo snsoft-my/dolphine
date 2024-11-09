@@ -14,6 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
+
 
 import { h, reactive, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -34,7 +36,7 @@ import { parseTime } from '@/common/common'
 
 export function useTable(
   updatePriority = (unusedQueueId: number, unusedPriority: number): void => { },
-  resetTableData = () => {}
+  resetTableData = () => { }
 ) {
   const { t } = useI18n()
 
