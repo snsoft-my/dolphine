@@ -204,6 +204,7 @@ export function useDatasource(
       span: params.span || 12,
       name: t('project.node.datasource_instances'),
       options: datasourceOptions,
+      value: 1,
       validate: {
         trigger: ['input', 'blur'],
         required: true,

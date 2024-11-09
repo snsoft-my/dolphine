@@ -51,13 +51,13 @@ export function useSql({
     preStatements: [],
     postStatements: [],
     udfs: [],
-    timeoutNotifyStrategy: ['WARN', 'FAILED']
+    timeoutNotifyStrategy: ['WARN', 'FAILED'],
   } as INodeData)
 
 
   return {
     json: [
-      Fields.useName(from),
+      Fields.useName(from, model),
       ...Fields.useTaskDefinition({ projectCode, from, readonly, data, model }),
       Fields.useRunFlag(),
       Fields.useCache(),

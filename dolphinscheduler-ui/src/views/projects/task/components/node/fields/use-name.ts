@@ -18,7 +18,7 @@
 import { useI18n } from 'vue-i18n'
 import type { IJsonItem } from '../types'
 
-export function useName(from?: number): IJsonItem {
+export function useName(from?: number, model?: { [field: string]: any }): IJsonItem {
   const { t } = useI18n()
   return {
     type: 'input',
@@ -27,7 +27,15 @@ export function useName(from?: number): IJsonItem {
     name: from === 1 ? t('project.node.task_name') : t('project.node.name'),
     props: {
       placeholder: t('project.node.name_tips'),
-      maxLength: 100
+      maxLength: 100,
+      'on-update:value': () => {
+        if (model) {
+          model.timeoutFlag = true
+          model.timeoutNotifyStrategy = ['WARN', 'FAILED']
+          model.timeout = 10
+        }
+        console.log(model)
+      }
     },
     validate: {
       trigger: ['input', 'blur'],
