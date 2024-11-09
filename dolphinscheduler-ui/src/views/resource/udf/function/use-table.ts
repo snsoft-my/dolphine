@@ -47,7 +47,7 @@ export function useTable() {
     id: ref(Number(router.currentRoute.value.params.id) || -1),
     fullName: ref(String(router.currentRoute.value.query.prefix || '')),
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     searchVal: ref(),
     totalPage: ref(1),
     showRef: ref(false),

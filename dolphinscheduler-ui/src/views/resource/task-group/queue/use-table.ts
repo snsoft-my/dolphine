@@ -33,7 +33,7 @@ import {
 import { parseTime } from '@/common/common'
 
 export function useTable(
-  updatePriority = (unusedQueueId: number, unusedPriority: number): void => {},
+  updatePriority = (unusedQueueId: number, unusedPriority: number): void => { },
   resetTableData = () => {}
 ) {
   const { t } = useI18n()
@@ -119,7 +119,7 @@ export function useTable(
     tableData: [],
     tableWidth: calculateTableWidth(columns) || DefaultTableWidth,
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     groupId: ref(3),
     totalPage: ref(1),
     loadingRef: ref(false)
@@ -165,7 +165,7 @@ export function useTable(
           }
         )
       },
-      () => {}
+      () => { }
     )
 
     variables.loadingRef = false

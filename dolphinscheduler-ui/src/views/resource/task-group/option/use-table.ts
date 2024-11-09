@@ -38,8 +38,8 @@ export function useTable(
     unusedGroupSize: number,
     unusedDescription: string,
     unusedStatus: number
-  ): void => {},
-  resetTableData = () => {}
+  ): void => { },
+  resetTableData = () => { }
 ) {
   const { t } = useI18n()
 
@@ -116,7 +116,7 @@ export function useTable(
     tableData: [],
     tableWidth: calculateTableWidth(columns) || DefaultTableWidth,
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     name: ref(null),
     totalPage: ref(1),
     loadingRef: ref(false)

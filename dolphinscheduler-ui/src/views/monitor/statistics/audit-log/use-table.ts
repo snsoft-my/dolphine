@@ -30,7 +30,7 @@ export function useTable() {
     columns: [],
     tableData: [],
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     resourceType: ref(null),
     operationType: ref(null),
     userName: ref(null),

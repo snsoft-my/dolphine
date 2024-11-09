@@ -55,7 +55,7 @@ export function useTable() {
     tableWidth: DefaultTableWidth,
     tableData: [] as IRecord[],
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     searchVal: ref(taskName || null),
     taskCode: ref(taskCode || null),
     processInstanceId: ref(processInstanceId ? processInstanceId : null),

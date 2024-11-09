@@ -175,7 +175,7 @@ export function useTable() {
     tableData: [],
     tableWidth: DefaultTableWidth,
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     searchVal: ref(null),
     totalPage: ref(1),
     showModalRef: ref(false),

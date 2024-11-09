@@ -43,8 +43,8 @@ export function useTimeoutAlarm(model: { [field: string]: any }): IJsonItem[] {
         'on-update:value': (value: boolean) => {
           if (value) {
             if (!model.timeoutNotifyStrategy.length)
-              model.timeoutNotifyStrategy = ['WARN']
-            if (!model.timeout) model.timeout = 30
+              model.timeoutNotifyStrategy = ['WARN', 'FAILED']
+            if (!model.timeout) model.timeout = 10
           }
         }
       }

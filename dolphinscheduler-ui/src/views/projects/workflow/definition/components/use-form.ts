@@ -64,7 +64,7 @@ export const useForm = () => {
       processInstancePriority: 'MEDIUM',
       workerGroup: 'default',
       tenantCode: 'default',
-      environmentCode: 'default',
+      environmentCode: null,
       startParams: null,
       expectedParallelismNumber: '',
       dryRun: 0,
@@ -110,7 +110,7 @@ export const useForm = () => {
       warningGroupId: 1,
       workerGroup: 'default',
       tenantCode: 'default',
-      environmentCode: 'default'
+      environmentCode: null
     },
     saving: false
   })

@@ -77,7 +77,7 @@ export function useTable() {
     }),
     pagination: ref({
       page: 1,
-      pageSize: 10,
+      pageSize: 50,
       itemCount: 0,
       pageSizes: [10, 30, 50]
     })
@@ -99,19 +99,19 @@ export function useTable() {
           return !row.directory
             ? row.alias
             : h(
-                ButtonLink,
-                {
-                  onClick: () => goSubFolder(router, row)
-                },
-                {
-                  default: () =>
-                    h(
-                      NEllipsis,
-                      COLUMN_WIDTH_CONFIG['linkEllipsis'],
-                      () => row.alias
-                    )
-                }
-              )
+              ButtonLink,
+              {
+                onClick: () => goSubFolder(router, row)
+              },
+              {
+                default: () =>
+                  h(
+                    NEllipsis,
+                    COLUMN_WIDTH_CONFIG['linkEllipsis'],
+                    () => row.alias
+                  )
+              }
+            )
         }
       },
       {

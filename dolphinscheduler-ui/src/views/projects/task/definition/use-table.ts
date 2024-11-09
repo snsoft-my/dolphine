@@ -254,7 +254,7 @@ export function useTable(onEdit: Function) {
     tableWidth: DefaultTableWidth,
     tableData: [],
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     searchTaskName: ref(null),
     searchWorkflowName: ref(null),
     totalPage: ref(1),

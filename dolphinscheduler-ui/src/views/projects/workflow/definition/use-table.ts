@@ -55,7 +55,7 @@ export function useTable() {
     tableData: [],
     projectCode: ref(Number(router.currentRoute.value.params.projectCode)),
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     searchVal: ref(),
     totalPage: ref(1),
     showRef: ref(false),

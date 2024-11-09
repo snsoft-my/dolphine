@@ -59,7 +59,7 @@ const taskGroupQueue = defineComponent({
       groupId: ref<number | null>(),
       processName: '',
       instanceName: '',
-      pageSize: 10,
+      pageSize: 50,
       pageNo: 1
     })
 

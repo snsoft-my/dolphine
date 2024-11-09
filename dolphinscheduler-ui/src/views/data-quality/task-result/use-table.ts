@@ -43,7 +43,7 @@ export function useTable() {
     tableWidth: DefaultTableWidth,
     tableData: [],
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     ruleType: ref(null),
     state: ref(null),
     searchVal: ref(null),

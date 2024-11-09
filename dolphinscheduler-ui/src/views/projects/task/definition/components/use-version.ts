@@ -53,13 +53,13 @@ export function useVersion() {
             row.version !== variables.taskVersion
               ? 'v' + row.version
               : h(
-                  NTag,
-                  { type: 'success', size: 'small' },
-                  {
-                    default: () =>
-                      `v${row.version} ${t('project.task.current_version')}`
-                  }
-                )
+                NTag,
+                { type: 'success', size: 'small' },
+                {
+                  default: () =>
+                    `v${row.version} ${t('project.task.current_version')}`
+                }
+              )
           )
       },
       {
@@ -153,7 +153,7 @@ export function useVersion() {
     columns: [],
     tableData: [],
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     totalPage: ref(1),
     taskVersion: ref(null),
     taskCode: ref(null),

@@ -40,7 +40,7 @@ export function useTable(
     tableData: [],
     page: ref(1),
     totalPage: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     projectCode: ref(Number(router.currentRoute.value.params.projectCode)),
     loadingRef: ref(false)
   })

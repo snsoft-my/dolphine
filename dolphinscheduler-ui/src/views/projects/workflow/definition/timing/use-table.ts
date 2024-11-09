@@ -51,7 +51,7 @@ export function useTable() {
     tableData: [],
     projectCode: ref(Number(router.currentRoute.value.params.projectCode)),
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     searchVal: ref(),
     totalPage: ref(1),
     showRef: ref(false),
@@ -107,19 +107,19 @@ export function useTable() {
         render: (row: any) => {
           if (row.releaseState === 'ONLINE') {
             return h(
-                NTag,
-                { type: 'success', size: 'small' },
-                {
-                  default: () => t('project.workflow.up_line')
-                }
+              NTag,
+              { type: 'success', size: 'small' },
+              {
+                default: () => t('project.workflow.up_line')
+              }
             )
           } else {
             return h(
-                NTag,
-                { type: 'warning', size: 'small' },
-                {
-                  default: () => t('project.workflow.down_line')
-                }
+              NTag,
+              { type: 'warning', size: 'small' },
+              {
+                default: () => t('project.workflow.down_line')
+              }
             )
           }
         }
@@ -132,35 +132,35 @@ export function useTable() {
           return h(NSpace, null, {
             default: () => [
               h(
-                  NTooltip,
-                  {},
-                  {
-                    trigger: () =>
-                        h(
-                            NButton,
-                            {
-                              circle: true,
-                              type:
-                                  row.releaseState === 'ONLINE' ? 'error' : 'warning',
-                              size: 'small',
-                              onClick: () => {
-                                handleReleaseState(row)
-                              }
-                            },
-                            {
-                              icon: () =>
-                                  h(
-                                      row.releaseState === 'ONLINE'
-                                          ? ArrowDownOutlined
-                                          : ArrowUpOutlined
-                                  )
-                            }
-                        ),
-                    default: () =>
-                        row.releaseState === 'ONLINE'
-                            ? t('project.workflow.down_line')
-                            : t('project.workflow.up_line')
-                  }
+                NTooltip,
+                {},
+                {
+                  trigger: () =>
+                    h(
+                      NButton,
+                      {
+                        circle: true,
+                        type:
+                          row.releaseState === 'ONLINE' ? 'error' : 'warning',
+                        size: 'small',
+                        onClick: () => {
+                          handleReleaseState(row)
+                        }
+                      },
+                      {
+                        icon: () =>
+                          h(
+                            row.releaseState === 'ONLINE'
+                              ? ArrowDownOutlined
+                              : ArrowUpOutlined
+                          )
+                      }
+                    ),
+                  default: () =>
+                    row.releaseState === 'ONLINE'
+                      ? t('project.workflow.down_line')
+                      : t('project.workflow.up_line')
+                }
               ),
             ]
           })

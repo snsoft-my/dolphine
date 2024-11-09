@@ -52,7 +52,7 @@ export function useTable() {
     tableWidth: DefaultTableWidth,
     tableData: [] as any[],
     page: 1,
-    pageSize: 10,
+    pageSize: 50,
     searchVal: null,
     processInstanceId: processInstanceId ? processInstanceId : null,
     host: null,

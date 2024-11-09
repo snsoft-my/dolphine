@@ -24,7 +24,7 @@ import {
 export function useTable() {
   const data = reactive({
     page: 1,
-    pageSize: 10,
+    pageSize: 50,
     itemCount: 0,
     searchVal: ref(''),
     list: [],

@@ -25,7 +25,7 @@ export function useTable() {
 
   const state = reactive({
     page: 1,
-    pageSize: 10,
+    pageSize: 50,
     itemCount: 0,
     searchVal: '',
     list: [],

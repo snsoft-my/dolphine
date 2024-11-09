@@ -55,7 +55,7 @@ export function useTable() {
     checkedRowKeys: [] as Array<RowKey>,
     tableData: [] as Array<IWorkflowInstance>,
     page: ref(1),
-    pageSize: ref(10),
+    pageSize: ref(50),
     totalPage: ref(1),
     searchVal: ref(),
     executorName: ref(),

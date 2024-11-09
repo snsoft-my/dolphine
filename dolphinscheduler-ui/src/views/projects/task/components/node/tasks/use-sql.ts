@@ -36,23 +36,24 @@ export function useSql({
     taskType: 'SQL',
     flag: 'YES',
     description: '',
-    timeoutFlag: false,
+    timeoutFlag: true,
     localParams: [],
     environmentCode: null,
     failRetryInterval: 1,
     failRetryTimes: 0,
     workerGroup: 'default',
     delayTime: 0,
-    timeout: 30,
-    type: 'MYSQL',
+    timeout: 10,
+    type: 'CLICKHOUSE',
     displayRows: 10,
     sql: '',
-    sqlType: '0',
+    sqlType: '1',
     preStatements: [],
     postStatements: [],
     udfs: [],
-    timeoutNotifyStrategy: ['WARN']
+    timeoutNotifyStrategy: ['WARN', 'FAILED']
   } as INodeData)
+
 
   return {
     json: [
