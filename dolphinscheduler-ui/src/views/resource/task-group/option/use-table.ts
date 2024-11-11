@@ -40,8 +40,8 @@ export function useTable(
     unusedGroupSize: number,
     unusedDescription: string,
     unusedStatus: number
-  ): void => { },
-  resetTableData = () => { }
+  ): void => {},
+  resetTableData = () => {}
 ) {
   const { t } = useI18n()
 

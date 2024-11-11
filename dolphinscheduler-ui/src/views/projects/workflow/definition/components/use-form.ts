@@ -55,7 +55,7 @@ export const useForm = () => {
       dataDateType: 1,
       failureStrategy: 'CONTINUE',
       warningType: 'FAILURE',
-      warningGroupId: 1,
+      warningGroupId: null,
       execType: 'START_PROCESS',
       startNodeList: '',
       taskDependType: 'TASK_POST',

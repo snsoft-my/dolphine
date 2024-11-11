@@ -36,14 +36,14 @@ export function useSql({
     taskType: 'SQL',
     flag: 'YES',
     description: '',
-    timeoutFlag: true,
+    timeoutFlag: false,
     localParams: [],
     environmentCode: null,
     failRetryInterval: 1,
     failRetryTimes: 0,
     workerGroup: 'default',
     delayTime: 0,
-    timeout: 10,
+    timeout: 30,
     type: 'CLICKHOUSE',
     displayRows: 10,
     sql: '',
@@ -51,13 +51,12 @@ export function useSql({
     preStatements: [],
     postStatements: [],
     udfs: [],
-    timeoutNotifyStrategy: ['WARN', 'FAILED'],
+    timeoutNotifyStrategy: ['WARN'],
   } as INodeData)
-
 
   return {
     json: [
-      Fields.useName(from, model),
+      Fields.useName(from),
       ...Fields.useTaskDefinition({ projectCode, from, readonly, data, model }),
       Fields.useRunFlag(),
       Fields.useCache(),

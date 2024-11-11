@@ -26,7 +26,7 @@ import { format } from 'date-fns'
 import { TableColumns } from 'naive-ui/es/data-table/src/interface'
 import { parseTime } from '@/common/common'
 
-export function useTable(viewRuleEntry = (unusedRuleJson: string): void => { }) {
+export function useTable(viewRuleEntry = (unusedRuleJson: string): void => {}) {
   const { t } = useI18n()
 
   const variables = reactive({

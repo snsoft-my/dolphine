@@ -39,10 +39,10 @@ export const useStart = (
     startForm: {
       version: 1,
       warningType: 'FAILURE',
-      warningGroupId: 1,
+      warningGroupId: null,
       workerGroup: 'default',
       tenantCode: 'default',
-      environmentCode: 'default',
+      environmentCode: null,
       startParams: null as null | string,
       dryRun: 0
     },

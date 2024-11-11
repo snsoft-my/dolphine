@@ -14,25 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { useI18n } from 'vue-i18n'
+import { useCustomParams, useResources } from '.'
 import type { IJsonItem } from '../types'
 
-export function useName(from?: number): IJsonItem {
+export function usePython(model: { [field: string]: any }): IJsonItem[] {
   const { t } = useI18n()
-  return {
-    type: 'input',
-    field: 'name',
-    class: 'input-node-name',
-    name: from === 1 ? t('project.node.task_name') : t('project.node.name'),
-    props: {
-      placeholder: t('project.node.name_tips'),
-      maxLength: 100
+
+  return [
+    {
+      type: 'editor',
+      field: 'rawScript',
+      name: t('project.node.script'),
+      validate: {
+        trigger: ['input', 'trigger'],
+        required: true,
+        message: t('project.node.script_tips')
+      },
+      props: {
+        language: 'python',
+      }
     },
-    validate: {
-      trigger: ['input', 'blur'],
-      required: true,
-      message: t('project.node.name_tips')
-    }
-  }
+    useResources(),
+    ...useCustomParams({ model, field: 'localParams', isSimple: false })
+  ]
 }

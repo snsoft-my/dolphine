@@ -35,8 +35,8 @@ import {
 import { parseTime } from '@/common/common'
 
 export function useTable(
-  updatePriority = (unusedQueueId: number, unusedPriority: number): void => { },
-  resetTableData = () => { }
+  updatePriority = (unusedQueueId: number, unusedPriority: number): void => {},
+  resetTableData = () => {}
 ) {
   const { t } = useI18n()
 
@@ -167,7 +167,7 @@ export function useTable(
           }
         )
       },
-      () => { }
+      () => {}
     )
 
     variables.loadingRef = false
