@@ -119,7 +119,49 @@ export default defineComponent({
       <NSpace>
         <NTooltip trigger={'hover'}>
           {{
+            default: () =>
+              releaseState === 'ONLINE'
+                ? t('project.workflow.down_line')
+                : t('project.workflow.up_line'),
+            trigger: () => (
+              <NButton
+                size='small'
+                type={releaseState === 'ONLINE' ? 'warning' : 'error'}
+                tag='div'
+                circle
+                class='btn-publish'
+              >
+                <NPopconfirm onPositiveClick={this.handleReleaseWorkflow}>
+                  {{
+                    default: () =>
+                      releaseState === 'ONLINE'
+                        ? t('project.workflow.confirm_to_offline')
+                        : t('project.workflow.confirm_to_online'),
+                    trigger: () => (
+                      <NIcon>
+                        {releaseState === 'ONLINE' ? (
+                          <DownloadOutlined />
+                        ) : (
+                          <UploadOutlined />
+                        )}
+                      </NIcon>
+                    )
+                  }}
+                </NPopconfirm>
+              </NButton>
+            )
+          }}
+        </NTooltip>
+        <NTooltip trigger={'hover'}>
+          {{
             default: () => t('project.workflow.edit'),
+/*************  ✨ Codeium Command ⭐  *************/
+            /**
+             * Edit workflow
+             *
+             * When the workflow is online, the button is disabled.
+             */
+/******  4a7ee9a9-9bc1-40c5-988c-5cd03271fc60  *******/
             trigger: () => (
               <NButton
                 size='small'
@@ -129,7 +171,7 @@ export default defineComponent({
                 onClick={this.handleEditWorkflow}
                 disabled={releaseState === 'ONLINE'}
                 class='btn-edit'
-                /* TODO: Edit workflow */
+              /* TODO: Edit workflow */
               >
                 <NIcon>
                   <FormOutlined />
@@ -177,42 +219,7 @@ export default defineComponent({
             )
           }}
         </NTooltip>
-        <NTooltip trigger={'hover'}>
-          {{
-            default: () =>
-              releaseState === 'ONLINE'
-                ? t('project.workflow.down_line')
-                : t('project.workflow.up_line'),
-            trigger: () => (
-              <NButton
-                size='small'
-                type={releaseState === 'ONLINE' ? 'warning' : 'error'}
-                tag='div'
-                circle
-                class='btn-publish'
-              >
-                <NPopconfirm onPositiveClick={this.handleReleaseWorkflow}>
-                  {{
-                    default: () =>
-                      releaseState === 'ONLINE'
-                        ? t('project.workflow.confirm_to_offline')
-                        : t('project.workflow.confirm_to_online'),
-                    trigger: () => (
-                      <NIcon>
-                        {releaseState === 'ONLINE' ? (
-                          <DownloadOutlined />
-                        ) : (
-                          <UploadOutlined />
-                        )}
-                      </NIcon>
-                    )
-                  }}
-                </NPopconfirm>
-              </NButton>
-            )
-          }}
-        </NTooltip>
-        <NTooltip trigger={'hover'}>
+        {/* <NTooltip trigger={'hover'}>
           {{
             default: () => t('project.workflow.copy_workflow'),
             trigger: () => (
@@ -229,7 +236,7 @@ export default defineComponent({
               </NButton>
             )
           }}
-        </NTooltip>
+        </NTooltip> */}
         <NTooltip trigger={'hover'}>
           {{
             default: () => t('project.workflow.cron_manage'),
@@ -301,7 +308,7 @@ export default defineComponent({
             )
           }}
         </NTooltip> */}
-        <NTooltip trigger={'hover'}>
+        {/* <NTooltip trigger={'hover'}>
           {{
             default: () => t('project.workflow.export'),
             trigger: () => (
@@ -336,7 +343,7 @@ export default defineComponent({
               </NButton>
             )
           }}
-        </NTooltip>
+        </NTooltip> */}
       </NSpace>
     )
   }

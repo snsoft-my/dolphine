@@ -32,7 +32,7 @@ const Sidebar = defineComponent({
     }
   },
   setup() {
-    const collapsedRef = ref(false)
+    const collapsedRef = ref(false) // collapsed or not
     const defaultExpandedKeys = [
       'workflow',
       'task',

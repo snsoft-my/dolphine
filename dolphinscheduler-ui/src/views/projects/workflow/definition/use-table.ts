@@ -250,18 +250,18 @@ export function useTable() {
       {
         title: t('project.workflow.operation'),
         key: 'operation',
-        ...COLUMN_WIDTH_CONFIG['operation'](9),
+        ...COLUMN_WIDTH_CONFIG['operation'](6),
         render: (row) =>
           h(TableAction, {
             row,
+            onReleaseWorkflow: () => releaseWorkflow(row),
             onEditWorkflow: () => editWorkflow(row),
             onStartWorkflow: () => startWorkflow(row),
             onTimingWorkflow: () => timingWorkflow(row),
-            onVersionWorkflow: () => versionWorkflow(row),
+            // onVersionWorkflow: () => versionWorkflow(row),
             onDeleteWorkflow: () => deleteWorkflow(row),
-            onReleaseWorkflow: () => releaseWorkflow(row),
-            onCopyWorkflow: () => copyWorkflow(row),
-            onExportWorkflow: () => exportWorkflow(row),
+            // onCopyWorkflow: () => copyWorkflow(row),
+            // onExportWorkflow: () => exportWorkflow(row),
             onGotoTimingManage: () => gotoTimingManage(row)
             // onGotoWorkflowTree: () => gotoWorkflowTree(row)
           })
@@ -290,10 +290,10 @@ export function useTable() {
     variables.row = row
   }
 
-  const versionWorkflow = (row: any) => {
-    variables.versionShowRef = true
-    variables.row = row
-  }
+  // const versionWorkflow = (row: any) => {
+  //   variables.versionShowRef = true
+  //   variables.row = row
+  // }
 
   const deleteWorkflow = (row: any) => {
     deleteByCode(variables.projectCode, row.code).then(() => {
@@ -368,20 +368,20 @@ export function useTable() {
     })
   }
 
-  const copyWorkflow = (row: any) => {
-    const data = {
-      codes: String(row.code),
-      targetProjectCode: variables.projectCode
-    }
-    batchCopyByCodes(data, variables.projectCode).then(() => {
-      window.$message.success(t('project.workflow.success'))
-      getTableData({
-        pageSize: variables.pageSize,
-        pageNo: variables.page,
-        searchVal: variables.searchVal
-      })
-    })
-  }
+  // const copyWorkflow = (row: any) => {
+  //   const data = {
+  //     codes: String(row.code),
+  //     targetProjectCode: variables.projectCode
+  //   }
+  //   batchCopyByCodes(data, variables.projectCode).then(() => {
+  //     window.$message.success(t('project.workflow.success'))
+  //     getTableData({
+  //       pageSize: variables.pageSize,
+  //       pageNo: variables.page,
+  //       searchVal: variables.searchVal
+  //     })
+  //   })
+  // }
 
   const downloadBlob = (data: any, fileNameS = 'json') => {
     if (!data) {
@@ -408,16 +408,16 @@ export function useTable() {
     }
   }
 
-  const exportWorkflow = (row: any) => {
-    const fileName = 'workflow_' + new Date().getTime()
+  // const exportWorkflow = (row: any) => {
+  //   const fileName = 'workflow_' + new Date().getTime()
 
-    const data = {
-      codes: String(row.code)
-    }
-    batchExportByCodes(data, variables.projectCode).then((res: any) => {
-      downloadBlob(res, fileName)
-    })
-  }
+  //   const data = {
+  //     codes: String(row.code)
+  //   }
+  //   batchExportByCodes(data, variables.projectCode).then((res: any) => {
+  //     downloadBlob(res, fileName)
+  //   })
+  // }
 
   const gotoTimingManage = (row: any) => {
     router.push({
@@ -426,12 +426,12 @@ export function useTable() {
     })
   }
 
-  const gotoWorkflowTree = (row: any) => {
-    router.push({
-      name: 'workflow-definition-tree',
-      params: { projectCode: variables.projectCode, definitionCode: row.code }
-    })
-  }
+  // const gotoWorkflowTree = (row: any) => {
+  //   router.push({
+  //     name: 'workflow-definition-tree',
+  //     params: { projectCode: variables.projectCode, definitionCode: row.code }
+  //   })
+  // }
 
   const getTableData = (params: IDefinitionParam) => {
     if (variables.loadingRef) return
