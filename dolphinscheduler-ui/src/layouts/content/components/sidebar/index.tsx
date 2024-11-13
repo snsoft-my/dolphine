@@ -50,6 +50,7 @@ const Sidebar = defineComponent({
     return (
       <NLayoutSider
         bordered
+        width={175}
         nativeScrollbar={false}
         show-trigger='bar'
         collapse-mode='width'
@@ -58,6 +59,7 @@ const Sidebar = defineComponent({
         onExpand={() => (this.collapsedRef = false)}
       >
         <NMenu
+          indent={20}
           class='tab-vertical'
           value={this.sideKey}
           options={this.sideMenuOptions}
