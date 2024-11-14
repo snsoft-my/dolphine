@@ -122,11 +122,11 @@ export default defineComponent({
       formRef.value.validate(async (valid: any) => {
         if (!valid) {
           const params = {
-            name: formValue.value.name,
+            name: formValue.value.name.trim(),
             code: props.definition?.processDefinition.code
           } as { name: string; code?: number }
           if (
-            props.definition?.processDefinition.name !== formValue.value.name
+            props.definition?.processDefinition.name !== formValue.value.name.trim()
           ) {
             verifyName(params, projectCode).then(() =>
               context.emit('save', formValue.value)
@@ -144,8 +144,8 @@ export default defineComponent({
     const updateModalData = () => {
       const process = props.definition?.processDefinition
       if (process) {
-        formValue.value.name = process.name
-        formValue.value.description = process.description
+        formValue.value.name = process.name.trim()
+        formValue.value.description = process.description.trim()
         formValue.value.executionType = process.executionType || 'PARALLEL'
         if (process.timeout && process.timeout > 0) {
           formValue.value.timeoutFlag = true
@@ -179,14 +179,14 @@ export default defineComponent({
         <NForm model={formValue.value} rules={rule} ref={formRef}>
           <NFormItem label={t('project.dag.workflow_name')} path='name'>
             <NInput
-              allowInput={trim}
+              // allowInput={trim}
               v-model:value={formValue.value.name}
               class='input-name'
             />
           </NFormItem>
           <NFormItem label={t('project.dag.description')} path='description'>
             <NInput
-              allowInput={trim}
+              // allowInput={trim}
               type='textarea'
               v-model:value={formValue.value.description}
               class='input-description'
