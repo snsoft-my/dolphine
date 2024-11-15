@@ -130,7 +130,7 @@ export default defineComponent({
         show={this.showModalRef}
         cancelShow={false}
         onConfirm={this.confirmModal}
-        style={{ width: '60%' }}
+        style={{ width: '75%' }}
         headerLinks={ref([
           {
             text: t('project.workflow.download_log'),
@@ -160,7 +160,7 @@ export default defineComponent({
           rows={30}
           log={this.logRef}
           loading={this.logLoadingRef}
-          style={{ height: isFullscreen ? 'calc(100vh - 140px)' : '525px' }}
+          style={{ height: isFullscreen ? 'calc(100vh - 140px)' : '100vh' }}
         />
       </Modal>
     )
