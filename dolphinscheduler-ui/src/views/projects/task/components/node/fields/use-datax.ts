@@ -27,24 +27,28 @@ export function useDataX(model: { [field: string]: any }): IJsonItem[] {
       value: 0
     },
     {
-      label: '1KB',
-      value: 1024
+      label: '1MB',
+      value: 1048576
     },
     {
-      label: '10KB',
-      value: 10240
+      label: '2MB',
+      value: 2097152
     },
     {
-      label: '50KB',
-      value: 51200
+      label: '5MB',
+      value: 5242880
     },
     {
-      label: '100KB',
-      value: 102400
+      label: '7MB',
+      value: 7340032
     },
     {
-      label: '512KB',
-      value: 524288
+      label: '10MB',
+      value: 10485760
+    },
+    {
+      label: '15MB',
+      value: 15728640
     }
   ]
   const jobSpeedRecordOptions: any[] = [
@@ -61,20 +65,28 @@ export function useDataX(model: { [field: string]: any }): IJsonItem[] {
       value: 1000
     },
     {
-      label: '1500',
-      value: 1500
-    },
-    {
-      label: '2000',
-      value: 2000
-    },
-    {
       label: '2500',
       value: 2500
     },
     {
-      label: '3000',
-      value: 3000
+      label: '5000',
+      value: 5000
+    },
+    {
+      label: '7500',
+      value: 7500
+    },
+    {
+      label: '10000',
+      value: 10000
+    },
+    {
+      label: '15000',
+      value: 15000
+    },
+    {
+      label: '20000',
+      value: 20000
     }
   ]
   const memoryLimitOptions = [
