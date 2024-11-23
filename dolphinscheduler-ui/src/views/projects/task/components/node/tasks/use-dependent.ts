@@ -51,7 +51,7 @@ export function useDependent({
     timeout: 30,
     timeoutFlag: false,
     failurePolicy: 'DEPENDENT_FAILURE_FAILURE',
-    checkInterval: 10,
+    checkInterval: 120,
     ...data
   } as INodeData)
 
