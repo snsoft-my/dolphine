@@ -84,11 +84,11 @@ export default defineComponent({
     const handleCollection = (item: any) => {
       item.collection
         ? CancelCollection(item.taskType).then(() => {
-            handleDagMenu()
-          })
+          handleDagMenu()
+        })
         : Collection(item.taskType).then(() => {
-            handleDagMenu()
-          })
+          handleDagMenu()
+        })
       item.collection = !item.collection
     }
 
@@ -98,7 +98,7 @@ export default defineComponent({
 
     return () => (
       <div class={styles.sidebar}>
-        <NCollapse default-expanded-names='1' accordion>
+        <NCollapse default-expanded-names='0' accordion>
           {variables.fav.length > 0 && (
             <NCollapseItem
               title={t('project.menu.fav')}
