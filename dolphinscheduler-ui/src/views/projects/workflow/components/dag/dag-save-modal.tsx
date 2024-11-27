@@ -77,7 +77,7 @@ export default defineComponent({
       timeout: 0,
       globalParams: [],
       release: true,
-      sync: false
+      sync: true
     })
     const formRef = ref()
 
