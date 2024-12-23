@@ -46,7 +46,23 @@ export function usePython({
     memoryMax: -1,
     delayTime: 0,
     timeout: 30,
-    rawScript: '',
+    rawScript: `from dstask import SQLTask as sql
+
+sql.run(
+    '''-- create table
+    ''',
+
+    '''-- drop partition
+    ''',
+
+    '''-- insert date
+    '''
+)
+
+# sql.assert_nonempty('db', 'table', 'date_field', '$[yyyy-MM-dd-1]')
+# sql.assert_nondup('db', 'table', '[key1, key2, key3]') or
+# sql.assert_nondup('db', 'table', '[key1, key2, key3]', 'date_field', '$[yyyy-MM-dd-1]')
+    `,
     timeoutNotifyStrategy: ['WARN']
   } as INodeData)
 
